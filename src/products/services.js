@@ -1,13 +1,32 @@
 const { Connection } = require('../database');
 
 const getProducts = () => {
-  let sqlAllProducts = "SELECT * FROM company.products";
-  Connection.connection.query(sqlAllProducts, (err, result) => {
-    if (err) throw err;    
-  console.log(result)
-  });
-}
+  const allProducts = Connection.connection.query('SELECT * FROM products', (err, rows, fields) => {
+    if (!err) {
+      return (rows)
+    } else {
+      return (err)
+    }
+  })
+  return allProducts;
+};
+const getProduct = () => {
+  return;
+};
+const createProduct = () => {
+  return;
+};
+const updateProduct = () => {
+  return;
+};
+const deleteProduct = () => {
+  return;
+};
 
 module.exports.ProductsService = {
   getProducts,
+  getProduct,
+  createProduct,
+  updateProduct,
+  deleteProduct
 }

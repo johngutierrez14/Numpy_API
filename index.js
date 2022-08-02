@@ -16,3 +16,4 @@ ProductsAPI(app);
 app.listen(Config.port, () => {
   debug(`Server on port ${Config.port}`)
 });
+
